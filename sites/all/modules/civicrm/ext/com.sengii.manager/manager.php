@@ -134,6 +134,21 @@ function manager_civicrm_entityTypes(&$entityTypes) {
   _manager_civix_civicrm_entityTypes($entityTypes);
 }
 
+function manager_civicrm_post($op, $objectName, $objectId, &$objectRef){
+  if($op == "create" && $objectName == "Group"){
+    $groups = civicrm_api3('SengiiGroupTracker', 'create', array(
+      'group_id' => $objectId,
+      'modified_date' => date("Y-m-d H:i:s")
+    ));
+  }else if($op == "update" && $objectName == "Group"){
+    $groups = civicrm_api3('SengiiGroupTracker', 'replace', array(
+      'group_id' => $objectId,
+      'modified_date' => date("Y-m-d H:i:s")
+    ));
+  }
+}
+
+
 // --- Functions below this ship commented out. Uncomment as required. ---
 
 /**

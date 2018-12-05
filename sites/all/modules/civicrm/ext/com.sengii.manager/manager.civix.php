@@ -456,5 +456,11 @@ function _manager_civix_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
 
 function _manager_civix_civicrm_entityTypes(&$entityTypes) {
   $entityTypes = array_merge($entityTypes, array (
+    'CRM_Manager_DAO_SengiiGroupTracker' => 
+    array (
+      'name' => 'SengiiGroupTracker',
+      'class' => 'CRM_Manager_DAO_SengiiGroupTracker',
+      'table' => 'civicrm_sengii_group_tracker',
+    ),
   ));
 }
